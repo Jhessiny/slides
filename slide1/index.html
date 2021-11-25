@@ -7,6 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    oi
+    <div style="width: 100vw; height: 600px;">
+        <img src="../imgs/img1.jpg" id="slide" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+
+    <script>
+        var i = 2;
+        var interval = 2000;
+        const imgTag = document.getElementById("slide")
+
+        var timer = setInterval(()=> {
+            i >= 6 ? i = 1 : i++ 
+            imgTag.src = `../imgs/img${i}.jpg`
+        }
+        , interval)
+
+    </script>
 </body>
 </html>
