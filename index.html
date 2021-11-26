@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, *::after, *::before{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #002b4e;
+        }
+        .sm-circle{
+            position: absolute;
+            background-color: rgb(182, 139, 21);
+            width: 200px;
+            height: 200px;
+           
+            border-radius: 50%;
+        }
+        .big-circle{
+            position: absolute;
+           
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            display: flex;
+            border: none;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            backface-visibility: hidden;
+        }
+
+        .line, .line::before, .line::after{
+            background-color: rgb(241, 222, 50);
+            width: 101%;
+            height: 55px;
+            border-top: 18px solid #002b4e;
+            border-bottom: 18px solid #002b4e;
+            z-index: 10;
+        }
+
+        .line::after{
+            content: "";
+            display: inline-block;
+            transform: translateY(-115px);
+        }
+        .line::before{
+            content: "";
+            display: inline-block;
+            transform: translateY(20px);
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sm-circle">
+    </div>
+    
+    <div class="big-circle">
+        <div class="line"></div>
+    </div>
+  </div>
+</body>
+</html>

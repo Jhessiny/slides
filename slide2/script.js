@@ -1,7 +1,6 @@
 const carouselSlide = document.querySelector(".carousel-slide")
 const carouselImgs = document.querySelectorAll(".carousel-slide img")
 
-
 const prevBtn = document.querySelector("#prevBtn")
 const nextBtn = document.querySelector("#nextBtn")
 
@@ -10,16 +9,19 @@ const size = carouselImgs[0].clientWidth;
 
 carouselSlide.style.transform = `translateX(${-size * counter}px)`
 
-nextBtn.addEventListener("click", ()=> {
+function changeSlide(prev = false){
+    if(counter <= 0 || counter >= carouselImgs.length -1) return;
+    prev ? counter-- : counter++;
     carouselSlide.classList.add("slide-transition");
-    counter++;
     carouselSlide.style.transform = `translateX(${-size * counter}px)`
+}
+
+nextBtn.addEventListener("click", ()=> {
+    changeSlide();
 })
 
 prevBtn.addEventListener("click", ()=> {
-    carouselSlide.classList.add("slide-transition");
-    counter--;
-    carouselSlide.style.transform = `translateX(${-size * counter}px)`
+    changeSlide(true);
 })
 
 carouselSlide.addEventListener("transitionend", ()=> {
