@@ -48,7 +48,6 @@ body {
 .carousel__button--prev,
 .carousel__button--next {
   width: 20%;
-  background-color: rgba(0, 0, 0, 0.555);
   cursor: pointer;
 }
 
@@ -65,7 +64,7 @@ body {
 
 .carousel__progress-item {
   width: 30%;
-  height: 5px;
+  height: 4px;
   background-color: rgba(41, 41, 41, 0.35);
   border-radius: 100px;
   overflow: hidden;
@@ -74,5 +73,5 @@ body {
 .carousel__inner-progress {
   width: 0%;
   height: 100%;
-  background-color: rgba(253, 253, 253, 0.35);
+  background-color: rgba(253, 253, 253, 0.5);
 }

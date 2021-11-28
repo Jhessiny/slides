@@ -5,12 +5,6 @@ let currentSlide = 0;
 let mainTimer;
 let progressTimer;
 
-function changeSlide() {
-  images[currentSlide].classList.remove("carousel__item--visible");
-  currentSlide >= images.length - 1 ? (currentSlide = 0) : currentSlide++;
-  images[currentSlide].classList.add("carousel__item--visible");
-}
-
 function updateProgress() {
   clearInterval(progressTimer);
   const currentProgress = progressBars[currentSlide];
@@ -20,12 +14,19 @@ function updateProgress() {
   progressTimer = setInterval(() => {
     progressWith += 2.5;
     currentProgress.style.width = progressWith + "px";
-    if (progressWith >= 120) clearInterval(progressTimer);
+    if (progressWith > 120) clearInterval(progressTimer);
   }, 50);
 }
 
+function changeSlide() {
+    images[currentSlide].classList.remove("carousel__item--visible");
+    currentSlide >= images.length - 1 ? (currentSlide = 0) : currentSlide++;
+    verifyProgressBar();
+    updateProgress();
+    images[currentSlide].classList.add("carousel__item--visible");
+  }  
+
 function verifyProgressBar() {
-  console.log("oi");
   [...progressBars].forEach((bar, index) => {
     if (index > currentSlide) {
       bar.style.width = "0%";
@@ -39,8 +40,6 @@ function start() {
   clearInterval(mainTimer);
   updateProgress();
   mainTimer = setInterval(() => {
-    updateProgress();
-    verifyProgressBar();
     changeSlide();
   }, 2500);
 }
