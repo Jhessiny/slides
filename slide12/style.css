@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #111;
+  font-family: Quicksand;
+}
+
+.testimonials {
+  position: relative;
+  max-width: 100%;
+  -webkit-box-reflect: below 1px linear-gradient(transparent 70%, #0009);
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 350px;
+  height: max-content;
+  background-color: #fff;
+  margin: 0 20px;
+}
+
+.swiper-3d .swiper-slide-shadow-right,
+.swiper-3d .swiper-slide-shadow-left {
+  background-image: none;
+}
+
+.testimonials .card {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #333;
+  padding: 50px 35px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.testimonials .card .layer {
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#03a9f4, #e91ee3);
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.testimonials .card:hover .layer {
+  top: 0;
+}
+
+.testimonials .card .content {
+  position: relative;
+  z-index: 2;
+}
+
+.testimonials .card .content p {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.testimonials .card .content .imgBx {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonials .card .content .imgBx img {
+  width: 100%;
+}
+/* 
+.swiper-slide img {
+  height: 150px;
+  width: 150px;
+  object-position: top;
+  object-fit: cover;
+} */
+
+.testimonials .card .content h2 {
+  font-size: 18px;
+  color: #fff;
+}
+
+.testimonials .card .content h2 span {
+  display: block;
+  color: #03a9f4;
+  font-size: 14px;
+  transition: 0.5s;
+}
+
+.testimonials .card:hover .content h2 span {
+  color: #fff;
+}
